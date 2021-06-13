@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:14:42 by zminhas           #+#    #+#             */
-/*   Updated: 2021/06/13 20:04:46 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/06/13 21:04:06 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@
 ** DEFINE
 */
 
-
+# define SCREEN_X 1920
+# define SCREEN_Y 1080
+# define DRAW_PREC 50
 
 /*
 ** STRUCT
@@ -43,9 +45,18 @@ typedef struct s_imglist
 	int		endian;
 }				t_img;
 
+typedef struct s_mathlist
+{
+	double	x_min;
+	double	x_max;
+	double	y_min;
+	double	y_max;
+}				t_math;
+
 typedef	struct	s_fractlist
 {
 	t_img	*img;
+	t_math	*math;
 	void	*mlx_ptr;
 	void	*win_ptr;
 }				t_fract;
@@ -54,7 +65,8 @@ typedef	struct	s_fractlist
 ** VAR FONCTION
 */
 
-void	init_var(t_fract *var);
+void	init_mlx(t_fract *var);
+void	init_const(t_fract *var);
 
 /*
 ** MLX FONCTION
