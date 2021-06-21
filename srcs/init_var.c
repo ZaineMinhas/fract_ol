@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:57:28 by zminhas           #+#    #+#             */
-/*   Updated: 2021/06/13 21:01:08 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/06/21 18:05:08 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ void	init_mlx(t_fract *var)
 
 void	init_const(t_fract *var)
 {
-	var->math->x_min = -2.1;
-	var->math->x_max = 0.6;
-	var->math->y_min = -1.2;
-	var->math->y_max = 1.2;
+	var->math->x1 = -2.1;
+	var->math->x2 = 0.6;
+	var->math->y1 = -1.2;
+	var->math->y2 = 1.2;
+	var->math->zoom = 200;
 }
