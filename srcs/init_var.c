@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:57:28 by zminhas           #+#    #+#             */
-/*   Updated: 2021/06/21 18:05:08 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/06/22 19:20:28 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	init_mlx(t_fract *var)
 {
 	var->img = malloc(sizeof(t_img));
-	var->math = malloc(sizeof(t_math));
+	var->param = malloc(sizeof(t_param));
 	var->mlx_ptr = mlx_init();
 	var->win_ptr = mlx_new_window(var->mlx_ptr, 1920, 1080, "la fenetre");
 	var->img->img = mlx_new_image(var->mlx_ptr, 1920, 1080);
@@ -25,9 +25,10 @@ void	init_mlx(t_fract *var)
 
 void	init_const(t_fract *var)
 {
-	var->math->x1 = -2.1;
-	var->math->x2 = 0.6;
-	var->math->y1 = -1.2;
-	var->math->y2 = 1.2;
-	var->math->zoom = 200;
+	var->param->x1 = -2.1;
+	var->param->x2 = 0.6;
+	var->param->y1 = -1.2;
+	var->param->y2 = 1.2;
+	var->param->zoom = ZOOM;
+	var->param->prec = DRAW_PREC;
 }

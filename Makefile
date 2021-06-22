@@ -6,7 +6,7 @@
 #    By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/13 19:22:42 by zminhas           #+#    #+#              #
-#    Updated: 2021/06/21 18:08:10 by zminhas          ###   ########.fr        #
+#    Updated: 2021/06/22 19:12:45 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,13 @@ WHITE		= $(shell tput -Txterm setaf 7)
 RESET		= $(shell tput -Txterm sgr0)
 
 SRCS	=	fractol.c\
+			srcs/key.c\
 			srcs/draw.c\
+			srcs/move.c\
+			srcs/zoom.c\
+			srcs/utils.c\
 			srcs/init_var.c\
-			srcs/mandelbrot.c
+			srcs/mandelbrot.c\
 
 OBJS	=	${SRCS:.c=.o}
 
