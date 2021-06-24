@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:14:42 by zminhas           #+#    #+#             */
-/*   Updated: 2021/06/22 19:19:55 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/06/24 14:39:56 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,8 @@ void	ft_reset(t_fract *var);
 ** UTILS FUNCTION
 */
 
+int		check_mandelbrot(char *str);
+int		check_julia(char *str);
 int		ft_close(t_fract *var);
 
 #endif

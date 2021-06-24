@@ -6,7 +6,7 @@
 #    By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/13 19:22:42 by zminhas           #+#    #+#              #
-#    Updated: 2021/06/22 19:12:45 by zminhas          ###   ########.fr        #
+#    Updated: 2021/06/24 14:55:08 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRCS	=	fractol.c\
 			srcs/utils.c\
 			srcs/init_var.c\
 			srcs/mandelbrot.c\
+			srcs/fract_name.c\
 
 OBJS	=	${SRCS:.c=.o}
 
