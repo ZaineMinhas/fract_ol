@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mandelbrot.c                                       :+:      :+:    :+:   */
+/*   julia.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/21 18:01:17 by zminhas           #+#    #+#             */
-/*   Updated: 2021/06/25 18:19:17 by zminhas          ###   ########.fr       */
+/*   Created: 2021/06/25 15:30:34 by zminhas           #+#    #+#             */
+/*   Updated: 2021/06/25 18:27:01 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
 
-static int	color(int i)
+/*static int	color(int i)
 {
 	if (i >= 0 && i <= 0.1 * DRAW_PREC)
 		return (0xFFFF00);
@@ -35,10 +35,12 @@ static int	color(int i)
 	else if (i > 0.9 * DRAW_PREC && i <= 0.99 * DRAW_PREC)
 		return (0xFF00FF);
 	return (0);
-}
+}*/
 
-void	mandelbrot(t_fract *var)
+void	julia(t_fract *var)
 {
+	//double	img_x;
+	//double	img_y;
 	double  c_r;
     double  c_i;
     double  z_r;
@@ -48,16 +50,18 @@ void	mandelbrot(t_fract *var)
 	int		y;
 	int		i;
 
+	var->param->zoom_x = SCREEN_X / (var->param->x2 - var->param->x1); //trouver le moyen de mettre ca dans un des init
+	var->param->zoom_y = SCREEN_Y / (var->param->y2 - var->param->y1);
 	x = -1;
 	while (++x < SCREEN_X)
 	{
 		y = -1;
 		while (++y < SCREEN_Y)
 		{
-			c_r = x / var->param->zoom_x + var->param->x1;
-			c_i = y / var->param->zoom_y + var->param->y1;
-			z_r = 0;
-			z_i = 0;
+			c_r = 0.285;
+			c_i = 0.01;
+			z_r = x / var->param->zoom_x + var->param->x1;
+			z_i = y / var->param->zoom_y + var->param->y1;
 			i = 0;
 			while (z_r * z_r + z_i * z_i <= 4 && i < DRAW_PREC)
 			{
@@ -67,7 +71,7 @@ void	mandelbrot(t_fract *var)
 				i++;
 			}
 			if  (i != DRAW_PREC)
-				draw_pixel(var->img, x, y, color(i));
+				draw_pixel(var->img, x, y, i * 255 / DRAW_PREC);
 		}
 	}
 	mlx_put_image_to_window(var->mlx_ptr, var->win_ptr, var->img->img, 0, 0);

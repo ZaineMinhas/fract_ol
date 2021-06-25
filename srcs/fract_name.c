@@ -6,62 +6,65 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 14:08:08 by zminhas           #+#    #+#             */
-/*   Updated: 2021/06/24 15:11:57 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/06/25 16:03:17 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
 
-int		check_mandelbrot(char *str)
+int		check_mandelbrot(char *str, t_fract *var)
 {
-	int		i;
-
-	i = 0;
+	var->param->mandelbrot = 0;
 	if (ft_strlen(str) != 10)
-		i++;
-	if (str[0] != 'm' || str[0] != 'M')
-		i++;
-	if (str[1] != 'a' || str[1] != 'A')
-		i++;
-	if (str[2] != 'n' || str[2] != 'N')
-		i++;
-	if (str[3] != 'd'|| str[3] != 'D')
-		i++;
-	if (str[4] != 'e' || str[4] != 'E')
-		i++;
-	if (str[5] != 'l' || str[5] != 'L')
-		i++;
-	if (str[6] != 'b'|| str[6] != 'B')
-		i++;
-	if (str[7] != 'r' || str[7] != 'R')
-		i++;
-	if (str[8] != 'o' || str[8] != 'O')
-		i++;
-	if (str[9] != 't' || str[9] != 'T')
-		i++;
-	else
-		i = 2;
-	return (i);
+		return (var->param->mandelbrot++);
+	if (str[0] != 'm' && str[0] != 'M')
+		return (var->param->mandelbrot++);
+	if (str[1] != 'a' && str[1] != 'A')
+		return (var->param->mandelbrot++);
+	if (str[2] != 'n' && str[2] != 'N')
+		return (var->param->mandelbrot++);
+	if (str[3] != 'd' && str[3] != 'D')
+		return (var->param->mandelbrot++);
+	if (str[4] != 'e' && str[4] != 'E')
+		return (var->param->mandelbrot++);
+	if (str[5] != 'l' && str[5] != 'L')
+		return (var->param->mandelbrot++);
+	if (str[6] != 'b' && str[6] != 'B')
+		return (var->param->mandelbrot++);
+	if (str[7] != 'r' && str[7] != 'R')
+		return (var->param->mandelbrot++);
+	if (str[8] != 'o' && str[8] != 'O')
+		return (var->param->mandelbrot++);
+	if (str[9] != 't' && str[9] != 'T')
+		return (var->param->mandelbrot++);
+	return (0);
 }
 
-int		check_julia(char *str)
+int		check_julia(char *str, t_fract *var)
 {
-	int		i;
-
-	i = 0;
+	var->param->julia = 0;
 	if (ft_strlen(str) != 5)
-		i++;
-	if (str[0] != 'j' || str[0] != 'J')
-		i++;
-	if (str[1] != 'u' || str[1] != 'U')
-		i++;
-	if (str[2] != 'l' || str[2] != 'L')
-		i++;
-	if (str[3] != 'i' || str[3] != 'I')
-		i++;
-	if (str[4] != 'a' || str[4] != 'A')
-		i++;
-	else
-		i = 2;
-	return (i);
+		return (var->param->julia++);
+	if (str[0] != 'j' && str[0] != 'J')
+		return (var->param->julia++);
+	if (str[1] != 'u' && str[1] != 'U')
+		return (var->param->julia++);
+	if (str[2] != 'l' && str[2] != 'L')
+		return (var->param->julia++);
+	if (str[3] != 'i' && str[3] != 'I')
+		return (var->param->julia++);
+	if (str[4] != 'a' && str[4] != 'A')
+		return (var->param->julia++);
+	return (0);
+}
+
+void	check_name(char *str, t_fract *var)
+{
+	check_mandelbrot(str, var);
+	check_julia(str, var);
+	if (var->param->mandelbrot && var->param->julia)
+	{
+		printf("NAME ERROR\n");
+		exit(1);
+	}
 }

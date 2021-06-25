@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:14:42 by zminhas           #+#    #+#             */
-/*   Updated: 2021/06/24 14:39:56 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/06/25 17:31:32 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@
 ** DEFINE
 */
 
-# define SCREEN_X 1920
-# define SCREEN_Y 1080
+# define SCREEN_X 880
+# define SCREEN_Y 720
 # define DRAW_PREC 50
 # define ZOOM 300
 # define KEY_ESC 53
@@ -62,7 +62,11 @@ typedef struct s_paramlist
 	double	y1;
 	double	y2;
 	double	zoom;
+	double	zoom_x;
+	double	zoom_y;
 	int		prec;
+	int		mandelbrot;
+	int		julia;
 }				t_param;
 
 typedef	struct	s_fractlist
@@ -77,7 +81,9 @@ typedef	struct	s_fractlist
 ** FRACTAL FUNCTION
 */
 
+void	display_fract(t_fract *var);
 void    mandelbrot(t_fract *var);
+void	julia(t_fract *var);
 void	zoom_in(t_fract *var);
 void	zoom_out(t_fract *var);
 void	move_up(t_fract *var);
@@ -92,6 +98,8 @@ void	move_right(t_fract *var);
 int		ft_key(int key, t_fract *var);
 void	init_mlx(t_fract *var);
 void	init_const(t_fract *var);
+void	init_mandelbrot(t_fract *var);
+void	init_julia(t_fract *var);
 
 /*
 ** MLX FUNCTION
@@ -104,8 +112,9 @@ void	ft_reset(t_fract *var);
 ** UTILS FUNCTION
 */
 
-int		check_mandelbrot(char *str);
-int		check_julia(char *str);
+void	check_name(char *str, t_fract *var);
+int		check_mandelbrot(char *str, t_fract *var);
+int		check_julia(char *str, t_fract *var);
 int		ft_close(t_fract *var);
 
 #endif

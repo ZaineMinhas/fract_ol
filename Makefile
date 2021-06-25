@@ -6,7 +6,7 @@
 #    By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/13 19:22:42 by zminhas           #+#    #+#              #
-#    Updated: 2021/06/24 14:55:08 by zminhas          ###   ########.fr        #
+#    Updated: 2021/06/25 15:46:48 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRCS	=	fractol.c\
 			srcs/move.c\
 			srcs/zoom.c\
 			srcs/utils.c\
+			srcs/julia.c\
 			srcs/init_var.c\
 			srcs/mandelbrot.c\
 			srcs/fract_name.c\
@@ -43,6 +44,7 @@ $(NAME):		$(OBJS)
 					@cp -r $(LIB_PATH)/libft.a ./fractol.a
 					@ar -rcs $(NAME) $(OBJS)
 					@gcc -lmlx -framework OpenGL -framework AppKit $(NAME)
+					@mv a.out fractol
 					@echo "${GREEN}fractol.a created !${RESET}"
 
 all:			$(NAME)
