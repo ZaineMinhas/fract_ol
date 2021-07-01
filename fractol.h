@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:14:42 by zminhas           #+#    #+#             */
-/*   Updated: 2021/06/25 17:31:32 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/01 17:15:40 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,8 @@
 ** DEFINE
 */
 
-# define SCREEN_X 880
-# define SCREEN_Y 720
-# define DRAW_PREC 50
-# define ZOOM 300
+# define SCREEN 1
+# define DRAW_PREC 100
 # define KEY_ESC 53
 # define KEY_W 13
 # define KEY_A 0
@@ -61,10 +59,11 @@ typedef struct s_paramlist
 	double	x2;
 	double	y1;
 	double	y2;
-	double	zoom;
 	double	zoom_x;
 	double	zoom_y;
 	int		prec;
+	int		screen_x;
+	int		screen_y;
 	int		mandelbrot;
 	int		julia;
 }				t_param;
@@ -96,6 +95,7 @@ void	move_right(t_fract *var);
 */
 
 int		ft_key(int key, t_fract *var);
+void	init_struct(t_fract *var);
 void	init_mlx(t_fract *var);
 void	init_const(t_fract *var);
 void	init_mandelbrot(t_fract *var);

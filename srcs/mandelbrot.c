@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 18:01:17 by zminhas           #+#    #+#             */
-/*   Updated: 2021/06/25 18:19:17 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/01 17:04:37 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,24 +49,24 @@ void	mandelbrot(t_fract *var)
 	int		i;
 
 	x = -1;
-	while (++x < SCREEN_X)
+	while (++x < var->param->screen_x)
 	{
 		y = -1;
-		while (++y < SCREEN_Y)
+		while (++y < var->param->screen_y)
 		{
 			c_r = x / var->param->zoom_x + var->param->x1;
 			c_i = y / var->param->zoom_y + var->param->y1;
 			z_r = 0;
 			z_i = 0;
 			i = 0;
-			while (z_r * z_r + z_i * z_i <= 4 && i < DRAW_PREC)
+			while (z_r * z_r + z_i * z_i <= 4 && i < var->param->prec)
 			{
 				tmp = z_r * z_r - z_i * z_i + c_r;
 				z_i = 2 * z_r * z_i + c_i;
                 z_r = tmp;
 				i++;
 			}
-			if  (i != DRAW_PREC)
+			if  (i != var->param->prec)
 				draw_pixel(var->img, x, y, color(i));
 		}
 	}

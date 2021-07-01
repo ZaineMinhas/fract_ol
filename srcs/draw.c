@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:40:31 by zminhas           #+#    #+#             */
-/*   Updated: 2021/06/22 18:47:51 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/01 16:38:23 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ void	ft_reset(t_fract *var)
 	int y;
 
 	x = -1;
-	while (++x < SCREEN_X)
+	while (++x < var->param->screen_x)
 	{
 		y = -1;
-		while (++y < SCREEN_Y)
+		while (++y < var->param->screen_y)
 			draw_pixel(var->img, x, y, 000000000);
 	}
 }
