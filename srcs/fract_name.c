@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 14:08:08 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/01 17:37:50 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/04 17:32:46 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,14 +65,14 @@ void	check_name(char *str, t_fract *var)
 		var->param->screen_x = 440 * SCREEN;
 		var->param->screen_y = 360 * SCREEN;
 	}
-	if (!check_julia(str, var))
+	else if (!check_julia(str, var))
 	{
 		var->param->screen_x = 520 * SCREEN;
 		var->param->screen_y = 580 * SCREEN;
 	}
-	if (var->param->mandelbrot && var->param->julia)
+	else
 	{
-		printf("NAME ERROR\n");
+		printf("Second argument have to be :\n-Mandelbrot\n-Julia\n");
 		exit(1);
 	}
 }

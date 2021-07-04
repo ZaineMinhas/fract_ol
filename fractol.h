@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:14:42 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/01 17:38:51 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/04 18:53:49 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@
 ** DEFINE
 */
 
-# define SCREEN 1.5
-# define DRAW_PREC 100
+# define SCREEN 1
+# define DRAW_PREC 300
 # define KEY_ESC 53
 # define KEY_W 13
 # define KEY_A 0
@@ -63,7 +63,9 @@ typedef struct s_paramlist
 	double	zoom_y;
 	float	screen_x;
 	float	screen_y;
-	int		prec;
+	float	add_x;
+	float	add_y;
+	int		zoom;
 	int		mandelbrot;
 	int		julia;
 }				t_param;
@@ -80,9 +82,19 @@ typedef	struct	s_fractlist
 ** FRACTAL FUNCTION
 */
 
-void	display_fract(t_fract *var);
 void    mandelbrot(t_fract *var);
 void	julia(t_fract *var);
+void	check_name(char *str, t_fract *var);
+int		display_fract(t_fract *var);
+int		check_mandelbrot(char *str, t_fract *var);
+int		check_julia(char *str, t_fract *var);
+
+/*
+** MOVE FUNCTION
+*/
+
+int		ft_key(int key, t_fract *var);
+int		ft_mouse_wheel(int button, int x, int y, t_fract *var);
 void	zoom_in(t_fract *var);
 void	zoom_out(t_fract *var);
 void	move_up(t_fract *var);
@@ -94,9 +106,7 @@ void	move_right(t_fract *var);
 ** VAR FUNCTION
 */
 
-int		ft_key(int key, t_fract *var);
 void	init_struct(t_fract *var);
-void	init_mlx(t_fract *var);
 void	init_const(t_fract *var);
 void	init_mandelbrot(t_fract *var);
 void	init_julia(t_fract *var);
@@ -106,15 +116,14 @@ void	init_julia(t_fract *var);
 */
 
 void	draw_pixel(t_img *img, int x, int y, int color);
+void	init_mlx(t_fract *var);
 void	ft_reset(t_fract *var);
 
 /*
 ** UTILS FUNCTION
 */
 
-void	check_name(char *str, t_fract *var);
-int		check_mandelbrot(char *str, t_fract *var);
-int		check_julia(char *str, t_fract *var);
+void	return_error(int index);
 int		ft_close(t_fract *var);
 
 #endif

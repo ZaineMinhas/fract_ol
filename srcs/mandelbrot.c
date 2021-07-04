@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 18:01:17 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/01 17:04:37 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/04 16:40:56 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,7 @@
 
 static int	color(int i)
 {
-	if (i >= 0 && i <= 0.1 * DRAW_PREC)
-		return (0xFFFF00);
-	else if (i > 0.1 * DRAW_PREC && i <= 0.2 * DRAW_PREC)
-		return (0xFFCC00);
-	else if (i > 0.2 * DRAW_PREC && i <= 0.3 * DRAW_PREC)
-		return (0xFF9900);
-	else if (i > 0.3 * DRAW_PREC && i <= 0.4 * DRAW_PREC)
-		return (0xFF6600);
-	else if (i > 0.4 * DRAW_PREC && i <= 0.5 * DRAW_PREC)
-		return (0xFF3300);
-	else if (i > 0.5 * DRAW_PREC && i <= 0.6 * DRAW_PREC)
-		return (0xFF0000);
-	else if (i > 0.6 * DRAW_PREC && i <= 0.7 * DRAW_PREC)
-		return (0xFF0033);
-	else if (i > 0.7 * DRAW_PREC && i <= 0.8 * DRAW_PREC)
-		return (0xFF0066);
-	else if (i > 0.8 * DRAW_PREC && i <= 0.9 * DRAW_PREC)
-		return (0xFF0099);
-	else if (i > 0.9 * DRAW_PREC && i <= 0.99 * DRAW_PREC)
-		return (0xFF00FF);
-	return (0);
+	return (16711935 + i * 2000);
 }
 
 void	mandelbrot(t_fract *var)
@@ -59,14 +39,14 @@ void	mandelbrot(t_fract *var)
 			z_r = 0;
 			z_i = 0;
 			i = 0;
-			while (z_r * z_r + z_i * z_i <= 4 && i < var->param->prec)
+			while (z_r * z_r + z_i * z_i <= 4 && i < DRAW_PREC)
 			{
 				tmp = z_r * z_r - z_i * z_i + c_r;
 				z_i = 2 * z_r * z_i + c_i;
                 z_r = tmp;
 				i++;
 			}
-			if  (i != var->param->prec)
+			if  (i != DRAW_PREC)
 				draw_pixel(var->img, x, y, color(i));
 		}
 	}

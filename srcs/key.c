@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 18:49:06 by zminhas           #+#    #+#             */
-/*   Updated: 2021/06/25 15:59:15 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/04 18:52:58 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,23 @@ int		ft_key(int key, t_fract *var)
 	else if (key == KEY_DOWN)
 		zoom_out(var);
 	else if (key == KEY_W)
-		move_up(var);
-	else if (key == KEY_A)
-		move_left(var);
-	else if (key == KEY_S)
 		move_down(var);
-	else if (key == KEY_D)
+	else if (key == KEY_A)
 		move_right(var);
-	//printf("--------------------\nx1 = %f\ny1 = %f\nx2 = %f\ny2 = %f\n", var->param->x1, var->param->y1, var->param->x2, var->param->y2);
+	else if (key == KEY_S)
+		move_up(var);
+	else if (key == KEY_D)
+		move_left(var);
+	return (0);
+}
+
+int		ft_mouse_wheel(int button, int x, int y, t_fract *var)
+{
+	x = 9;
+	y = 6;
+	if (button == 4)
+		var->param->zoom = 1;
+	else if (button == 5)
+		var->param->zoom = -1;
 	return (0);
 }
