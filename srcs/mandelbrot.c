@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 18:01:17 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/04 16:40:56 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/05 17:38:32 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	color(int i)
 {
-	return (16711935 + i * 2000);
+	return (65382 + i * 300000);
 }
 
 void	mandelbrot(t_fract *var)

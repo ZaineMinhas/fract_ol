@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:57:28 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/04 19:08:34 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/05 17:14:36 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ void	init_julia(t_fract *var)
 
 void	init_const(t_fract *var)
 {
-	if (!var->param->mandelbrot)
+	if (var->param->id == 1)
 		init_mandelbrot(var);
-	else if (!var->param->julia)
+	else if (var->param->id == 2)
 		init_julia(var);
 }

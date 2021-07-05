@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:14:42 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/04 18:53:49 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/05 17:45:05 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@
 ** DEFINE
 */
 
-# define SCREEN 1
-# define DRAW_PREC 300
+# define SCREEN 0.8
+# define DRAW_PREC 200
 # define KEY_ESC 53
 # define KEY_W 13
 # define KEY_A 0
@@ -55,19 +55,18 @@ typedef struct s_imglist
 
 typedef struct s_paramlist
 {
-	double	x1;
-	double	x2;
-	double	y1;
-	double	y2;
-	double	zoom_x;
-	double	zoom_y;
-	float	screen_x;
-	float	screen_y;
-	float	add_x;
-	float	add_y;
-	int		zoom;
-	int		mandelbrot;
-	int		julia;
+	long double	x1;
+	long double	x2;
+	long double	y1;
+	long double	y2;
+	long double	zoom_x;
+	long double	zoom_y;
+	float		screen_x;
+	float		screen_y;
+	float		add_x;
+	float		add_y;
+	int			moves[5];
+	int			id;
 }				t_param;
 
 typedef	struct	s_fractlist
@@ -86,8 +85,8 @@ void    mandelbrot(t_fract *var);
 void	julia(t_fract *var);
 void	check_name(char *str, t_fract *var);
 int		display_fract(t_fract *var);
-int		check_mandelbrot(char *str, t_fract *var);
-int		check_julia(char *str, t_fract *var);
+int		check_mandelbrot(char *str);
+int		check_julia(char *str);
 
 /*
 ** MOVE FUNCTION

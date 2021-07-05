@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:49:59 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/04 18:52:25 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/05 17:12:57 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@
 
 static	int	check_moves(t_fract *var)
 {
-	if (var->param->zoom == 1)
+	if (var->param->moves[0] == 1)
 		zoom_in(var);
-	if (var->param->zoom == -1)
+	if (var->param->moves[0] == -1)
 		zoom_out(var);
 	return (1);
 }
@@ -53,9 +53,9 @@ int		display_fract(t_fract *var)
 {
 	if (check_moves(var))
 	{
-		if (!var->param->mandelbrot)
+		if (var->param->id == 1)
 			mandelbrot(var);
-		else if (!var->param->julia)
+		else if (var->param->id == 2)
 			julia(var);
 	}
 	return (0);
