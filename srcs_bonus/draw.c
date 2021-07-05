@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   key.c                                              :+:      :+:    :+:   */
+/*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/22 18:49:06 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/05 19:28:25 by zminhas          ###   ########.fr       */
+/*   Created: 2021/06/13 19:40:31 by zminhas           #+#    #+#             */
+/*   Updated: 2021/07/01 16:38:23 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
 
-int		ft_key(int key)
+void	draw_pixel(t_img *img, int x, int y, int color)
 {
-	if (key == KEY_ESC)
-		exit(1);
-	return (0);
+	char	*dst;
+
+	dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel / 8));
+    *(unsigned int *)dst = color;
 }
 
-int		ft_mouse_wheel(int button, int x, int y, t_fract *var)
+void	ft_reset(t_fract *var)
 {
-	x = 9;
-	y = 6;
-	if (button == 4)
-		zoom_in(var);
-		//var->param->moves[0] = 1;
-	else if (button == 5)
-		zoom_out(var);
-		//var->param->moves[0] = -1;
-	return (0);
+	int x;
+	int y;
+
+	x = -1;
+	while (++x < var->param->screen_x)
+	{
+		y = -1;
+		while (++y < var->param->screen_y)
+			draw_pixel(var->img, x, y, 000000000);
+	}
 }

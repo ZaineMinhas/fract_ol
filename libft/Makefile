@@ -6,7 +6,7 @@
 #    By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 18:35:49 by zminhas           #+#    #+#              #
-#    Updated: 2021/06/25 16:49:28 by zminhas          ###   ########.fr        #
+#    Updated: 2021/07/05 19:06:11 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,11 +28,9 @@ NAME	=	libft.a
 
 .c.o:
 			@gcc -Wall -Wextra -Werror -c -I./ $< -o ${<:.c=.o}
-			@echo "${LIGHTPURPLE}Compilation of :$<${RESET}"
 
 $(NAME):	${OBJS}
 			@ar -rcs ${NAME} ${OBJS}
-			@echo "${GREEN}Library created !${RESET}"
 
 all:		${NAME}
 
