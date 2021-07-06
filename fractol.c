@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:49:59 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/05 19:32:00 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/06 17:04:02 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,24 +40,12 @@
 	mlx_put_image_to_window(var->mlx_ptr, var->win_ptr, var->img->img, 0, 0);
 }*/
 
-static	int	check_moves(t_fract *var)
-{
-	if (var->param->moves[0] == 1)
-		zoom_in(var);
-	if (var->param->moves[0] == -1)
-		zoom_out(var);
-	return (1);
-}
-
 int		display_fract(t_fract *var)
 {
-	if (check_moves(var))
-	{
-		if (var->param->id == 1)
-			mandelbrot(var);
-		else if (var->param->id == 2)
-			julia(var);
-	}
+	if (var->param->id == 1)
+		mandelbrot(var);
+	else if (var->param->id == 2)
+		julia(var);
 	return (0);
 	//ft_mandelbrot_croix(var);
 }

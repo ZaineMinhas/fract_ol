@@ -6,11 +6,11 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:57:28 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/05 17:14:36 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/06 16:46:48 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "../fractol_bonus.h"
 
 void	init_struct(t_fract *var)
 {

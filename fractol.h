@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:14:42 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/05 19:28:44 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/06 17:06:14 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,9 @@
 ** DEFINE
 */
 
-# define SCREEN 0.8
+# define SCREEN 1
 # define DRAW_PREC 200
 # define KEY_ESC 53
-# define KEY_W 13
-# define KEY_A 0
-# define KEY_S 1
-# define KEY_D 2
-# define KEY_LEFT 123
-# define KEY_RIGHT 124
-# define KEY_UP 126
-# define KEY_DOWN 125
 
 /*
 ** STRUCT
@@ -65,7 +57,7 @@ typedef struct s_paramlist
 	float		screen_y;
 	float		add_x;
 	float		add_y;
-	int			moves[5];
+	int			moves;
 	int			id;
 }				t_param;
 
@@ -96,10 +88,6 @@ int		ft_key(int key);
 int		ft_mouse_wheel(int button, int x, int y, t_fract *var);
 void	zoom_in(t_fract *var);
 void	zoom_out(t_fract *var);
-void	move_up(t_fract *var);
-void	move_down(t_fract *var);
-void	move_left(t_fract *var);
-void	move_right(t_fract *var);
 
 /*
 ** VAR FUNCTION

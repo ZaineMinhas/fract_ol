@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   fractol_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:14:42 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/05 17:45:05 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/06 17:07:34 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#ifndef FRACTOL_BONUS_H
+# define FRACTOL_BONUS_H
 
 # include <mlx.h>
 # include <math.h>
@@ -28,7 +28,7 @@
 ** DEFINE
 */
 
-# define SCREEN 0.8
+# define SCREEN 1
 # define DRAW_PREC 200
 # define KEY_ESC 53
 # define KEY_W 13

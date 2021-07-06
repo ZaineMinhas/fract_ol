@@ -6,7 +6,7 @@
 #    By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/13 19:22:42 by zminhas           #+#    #+#              #
-#    Updated: 2021/07/05 19:26:40 by zminhas          ###   ########.fr        #
+#    Updated: 2021/07/06 17:11:33 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,6 @@ RESET		= $(shell tput -Txterm sgr0)
 SRCS	=	fractol.c\
 			srcs/key.c\
 			srcs/draw.c\
-			srcs/move.c\
 			srcs/zoom.c\
 			srcs/utils.c\
 			srcs/julia.c\
@@ -68,7 +67,7 @@ bonus:			$(OBJS_BONUS)
 					@ar -rcs $(NAME) $(OBJS_BONUS)
 					@gcc -lmlx -framework OpenGL -framework AppKit $(NAME)
 					@mv a.out fractol
-					@echo "${GREEN}fractol.a created !${RESET}"
+					@echo "${BLUE}fractol_bonus.a created !${RESET}"
 
 clean:			
 				@rm -f $(OBJS)

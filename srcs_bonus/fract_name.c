@@ -6,11 +6,11 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 14:08:08 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/05 17:30:53 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/06 16:46:43 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "../fractol_bonus.h"
 
 int		check_mandelbrot(char *str)
 {

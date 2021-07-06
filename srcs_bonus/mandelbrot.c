@@ -6,11 +6,11 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 18:01:17 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/05 17:38:32 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/06 17:22:17 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "../fractol_bonus.h"
 
 static int	color(int i)
 {
@@ -19,11 +19,11 @@ static int	color(int i)
 
 void	mandelbrot(t_fract *var)
 {
-	double  c_r;
-    double  c_i;
-    double  z_r;
-    double  z_i;
-    double  tmp;
+	long double  c_r;
+    long double  c_i;
+    long double  z_r;
+    long double  z_i;
+    long double  tmp;
 	int		x;
 	int		y;
 	int		i;

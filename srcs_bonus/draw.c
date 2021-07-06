@@ -6,11 +6,11 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:40:31 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/01 16:38:23 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/06 16:46:36 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "../fractol_bonus.h"
 
 void	draw_pixel(t_img *img, int x, int y, int color)
 {
