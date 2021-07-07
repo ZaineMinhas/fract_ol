@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:14:42 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/06 17:06:14 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/07 18:05:38 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 */
 
 # define SCREEN 1
+# define COLOR 0
 # define DRAW_PREC 200
 # define KEY_ESC 53
 
@@ -105,6 +106,16 @@ void	init_julia(t_fract *var);
 void	draw_pixel(t_img *img, int x, int y, int color);
 void	init_mlx(t_fract *var);
 void	ft_reset(t_fract *var);
+
+/*
+** COLOR FUNCTION
+*/
+
+int		color_ice(int i);
+int		color_fire(int i);
+int		color_rave(int i);
+int		color_clown(int i);
+int		color_psycho(int i);
 
 /*
 ** UTILS FUNCTION

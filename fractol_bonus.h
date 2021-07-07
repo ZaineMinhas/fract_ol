@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:14:42 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/06 17:07:34 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/07 19:50:27 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 */
 
 # define SCREEN 1
+# define COLOR 1
 # define DRAW_PREC 200
 # define KEY_ESC 53
 # define KEY_W 13
@@ -83,10 +84,14 @@ typedef	struct	s_fractlist
 
 void    mandelbrot(t_fract *var);
 void	julia(t_fract *var);
+void	beryl(t_fract *var);
+void	burningship(t_fract *var);
 void	check_name(char *str, t_fract *var);
 int		display_fract(t_fract *var);
 int		check_mandelbrot(char *str);
 int		check_julia(char *str);
+int		check_beryl(char *str);
+int		check_burningship(char *str);
 
 /*
 ** MOVE FUNCTION
@@ -109,6 +114,8 @@ void	init_struct(t_fract *var);
 void	init_const(t_fract *var);
 void	init_mandelbrot(t_fract *var);
 void	init_julia(t_fract *var);
+void	init_beryl(t_fract *var);
+void	init_burningship(t_fract *var);
 
 /*
 ** MLX FUNCTION
@@ -117,6 +124,16 @@ void	init_julia(t_fract *var);
 void	draw_pixel(t_img *img, int x, int y, int color);
 void	init_mlx(t_fract *var);
 void	ft_reset(t_fract *var);
+
+/*
+** COLOR FUNCTION
+*/
+
+int		color_ice(int i);
+int		color_fire(int i);
+int		color_rave(int i);
+int		color_clown(int i);
+int		color_psycho(int i);
 
 /*
 ** UTILS FUNCTION

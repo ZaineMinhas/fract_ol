@@ -6,39 +6,11 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:49:59 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/06 16:58:27 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/07 19:43:23 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol_bonus.h"
-
-/*static	void	ft_mandelbrot_croix(t_fract *var)
-{
-	int x;
-	int y;
-
-	x = -1;
-	y = -1;
-	while (++x < 420)
-		draw_pixel(var->img, x, 180, 0x3FFAB2);
-	while (++y < 360)
-		draw_pixel(var->img, 220, y, 0x3FFAB2);
-	mlx_put_image_to_window(var->mlx_ptr, var->win_ptr, var->img->img, 0, 0);
-}*/
-
-/*static	void	ft_julia_croix(t_fract *var)
-{
-	int x;
-	int y;
-
-	x = -1;
-	y = -1;
-	while (++x < 520)
-		draw_pixel(var->img, x, 290, 0x3FFAB2);
-	while (++y < 580)
-		draw_pixel(var->img, 260, y, 0x3FFAB2);
-	mlx_put_image_to_window(var->mlx_ptr, var->win_ptr, var->img->img, 0, 0);
-}*/
 
 static	int	check_moves(t_fract *var)
 {
@@ -57,9 +29,12 @@ int		display_fract(t_fract *var)
 			mandelbrot(var);
 		else if (var->param->id == 2)
 			julia(var);
+		else if (var->param->id == 3)
+			beryl(var);
+		else if (var->param->id == 4)
+			burningship(var);
 	}
 	return (0);
-	//ft_mandelbrot_croix(var);
 }
 
 int		main(int argc, char **argv)

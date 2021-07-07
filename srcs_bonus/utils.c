@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 16:40:05 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/06 16:47:07 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/07 19:45:09 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,15 @@ void	return_error(int index)
 		return_error(3);
 	}
 	else if (index == 1)
-	{
 		printf("MALLOC ERROR\n");
-		exit(1);
-	}
 	else if (index == 2)
-	{
 		printf("SOMETHING WRONG\n");
-		exit(1);
-	}
 	else if (index == 3)
 	{
-		printf("Second argument have to be :\n-Mandelbrot\n-Julia\n");
-		exit(1);
+		printf("Second argument have to be :\n-Mandelbrot\n-Julia\n-Beryl\n");
+		printf("-Burningship\n");
 	}
+	exit(1);
 }
 
 int		ft_close(t_fract *var)
