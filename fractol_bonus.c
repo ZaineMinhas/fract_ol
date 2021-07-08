@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:49:59 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/07 19:43:23 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/08 16:23:28 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,13 @@ int		main(int argc, char **argv)
 {
 	t_fract		var;
 
-	if (argc != 2)
+	if (argc < 2)
 		return_error(0);
 	init_struct(&var);
+	if (argc >= 3)
+		select_color(&var, argv[2]);
+	else
+		select_color(&var, NULL);
 	check_name(argv[1], &var);
 	init_mlx(&var);
 	init_const(&var);

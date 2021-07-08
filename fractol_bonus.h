@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:14:42 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/07 19:50:27 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/08 16:22:36 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,20 @@
 */
 
 # define SCREEN 1
-# define COLOR 1
+# define COLOR 0
 # define DRAW_PREC 200
 # define KEY_ESC 53
 # define KEY_W 13
 # define KEY_A 0
 # define KEY_S 1
 # define KEY_D 2
+# define KEY_1 18
+# define KEY_2 19
+# define KEY_3 20
+# define KEY_4 21
+# define KEY_5 22
+# define KEY_6 23
+# define KEY_7 26
 # define KEY_LEFT 123
 # define KEY_RIGHT 124
 # define KEY_UP 126
@@ -68,6 +75,7 @@ typedef struct s_paramlist
 	float		add_y;
 	int			moves[5];
 	int			id;
+	int			color;
 }				t_param;
 
 typedef	struct	s_fractlist
@@ -99,6 +107,7 @@ int		check_burningship(char *str);
 
 int		ft_key(int key, t_fract *var);
 int		ft_mouse_wheel(int button, int x, int y, t_fract *var);
+void	other_key(int key, t_fract *var);
 void	zoom_in(t_fract *var);
 void	zoom_out(t_fract *var);
 void	move_up(t_fract *var);
@@ -129,6 +138,7 @@ void	ft_reset(t_fract *var);
 ** COLOR FUNCTION
 */
 
+void	select_color(t_fract *var, char *str);
 int		color_ice(int i);
 int		color_fire(int i);
 int		color_rave(int i);

@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 14:53:21 by zminhas           #+#    #+#             */
-/*   Updated: 2021/06/25 16:48:26 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/08 16:15:43 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@
 # include <stdlib.h>
 
 size_t			ft_strlen(const char *s);
+int				ft_atoi(const char *str);
 
 #endif

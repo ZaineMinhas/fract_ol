@@ -6,27 +6,27 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 19:00:50 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/07 19:55:32 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/08 15:44:03 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol_bonus.h"
 
-static int	color(int i)
+static int	color(int i, t_fract *var)
 {
-	if (COLOR == 0)
+	if (var->param->color == 0)
 		return (color_ice(i));
-	else if (COLOR == 1)
+	else if (var->param->color == 1)
 		return (color_fire(i));
-	else if (COLOR == 2)
+	else if (var->param->color == 2)
 		return (color_clown(i));
-	else if (COLOR == 3)
+	else if (var->param->color == 3)
 		return (color_rave(i));
-	else if (COLOR == 4)
+	else if (var->param->color == 4)
 		return (color_psycho(i));
-	else if (COLOR == 5)
+	else if (var->param->color == 5)
 		return (65382 + i * 300000);
-	else if (COLOR == 6)
+	else if (var->param->color == 6)
 		return (16776960 + i * 30000000);
 	else
 	{
@@ -67,7 +67,7 @@ void	beryl(t_fract *var)
                 z_i = tmp[1];
 			}
 			if  (i != DRAW_PREC)
-				draw_pixel(var->img, x, y, color(i));
+				draw_pixel(var->img, x, y, color(i, var));
 		}
 	}
 	mlx_put_image_to_window(var->mlx_ptr, var->win_ptr, var->img->img, 0, 0);

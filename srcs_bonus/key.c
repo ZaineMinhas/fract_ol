@@ -6,11 +6,29 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 18:49:06 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/06 16:46:55 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/08 16:06:33 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol_bonus.h"
+
+void	other_key(int key, t_fract *var)
+{
+	if (key == KEY_1)
+		var->param->color = 0;
+	else if (key == KEY_2)
+		var->param->color = 1;
+	else if (key == KEY_3)
+		var->param->color = 2;
+	else if (key == KEY_4)
+		var->param->color = 3;
+	else if (key == KEY_5)
+		var->param->color = 4;
+	else if (key == KEY_6)
+		var->param->color = 5;
+	else if (key == KEY_7)
+		var->param->color = 6;
+}
 
 int		ft_key(int key, t_fract *var)
 {
@@ -28,6 +46,8 @@ int		ft_key(int key, t_fract *var)
 		move_up(var);
 	else if (key == KEY_D)
 		move_left(var);
+	else
+		other_key(key, var);
 	return (0);
 }
 

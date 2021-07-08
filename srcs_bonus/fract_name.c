@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 14:08:08 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/07 19:42:21 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/08 16:25:37 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ void	check_name(char *str, t_fract *var)
 	else if (var->param->id == 4)
 	{
 		var->param->screen_x = 440 * SCREEN;
-		var->param->screen_y = 360 * SCREEN;
+		var->param->screen_y = 430 * SCREEN;
 	}
 	else
 		return_error(3);

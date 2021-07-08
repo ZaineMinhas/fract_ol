@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 16:40:05 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/07 19:45:09 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/08 16:21:08 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,22 @@ void	return_error(int index)
 		printf("-Burningship\n");
 	}
 	exit(1);
+}
+
+void	select_color(t_fract *var, char *str)
+{
+	int	c;
+
+	if (!str)
+	{
+		var->param->color = COLOR;
+		return ;
+	}
+	c = ft_atoi(str);
+	if (c >= 0 && c <= 6)
+		var->param->color = c;
+	else
+		var->param->color = COLOR;
 }
 
 int		ft_close(t_fract *var)
