@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 16:40:05 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/07 19:45:32 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/10 16:24:01 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	return_error(int index)
 	exit(1);
 }
 
-int		ft_close(t_fract *var)
+int	ft_close(t_fract *var)
 {
 	(void)var;
 	exit(1);

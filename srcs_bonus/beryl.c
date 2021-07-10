@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 19:00:50 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/08 15:44:03 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/10 16:23:13 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,14 @@ static int	color(int i, t_fract *var)
 
 void	beryl(t_fract *var)
 {
-	long double  c_r;
-    long double  c_i;
-    long double  z_r;
-    long double  z_i;
-    long double  tmp[2];
-	int		x;
-	int		y;
-	int		i;
+	long double	c_r;
+	long double	c_i;
+	long double	z_r;
+	long double	z_i;
+	long double	tmp[2];
+	int			x;
+	int			y;
+	int			i;
 
 	x = -1;
 	while (++x < var->param->screen_x)
@@ -63,10 +63,10 @@ void	beryl(t_fract *var)
 				tmp[1] = c_r * z_i + c_i * z_r;
 				c_r += z_r;
 				c_i += z_i;
-                z_r = tmp[0];
-                z_i = tmp[1];
+				z_r = tmp[0];
+				z_i = tmp[1];
 			}
-			if  (i != DRAW_PREC)
+			if (i != DRAW_PREC)
 				draw_pixel(var->img, x, y, color(i, var));
 		}
 	}

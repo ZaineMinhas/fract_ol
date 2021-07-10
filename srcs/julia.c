@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 15:30:34 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/07 19:58:05 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/10 16:25:54 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ static int	color(int i)
 
 void	julia(t_fract *var)
 {
-	double  c_r;
-    double  c_i;
-    double  z_r;
-    double  z_i;
-    double  tmp;
+	double	c_r;
+	double	c_i;
+	double	z_r;
+	double	z_i;
+	double	tmp;
 	int		x;
 	int		y;
 	int		i;
@@ -61,9 +61,9 @@ void	julia(t_fract *var)
 			{
 				tmp = z_r * z_r - z_i * z_i + c_r;
 				z_i = 2 * z_r * z_i + c_i;
-                z_r = tmp;
+				z_r = tmp;
 			}
-			if  (i != DRAW_PREC)
+			if (i != DRAW_PREC)
 				draw_pixel(var->img, x, y, color(i));
 		}
 	}

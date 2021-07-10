@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:49:59 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/08 16:23:28 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/10 16:31:24 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static	int	check_moves(t_fract *var)
 	return (1);
 }
 
-int		display_fract(t_fract *var)
+int	display_fract(t_fract *var)
 {
 	if (check_moves(var))
 	{
@@ -37,7 +37,7 @@ int		display_fract(t_fract *var)
 	return (0);
 }
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_fract		var;
 

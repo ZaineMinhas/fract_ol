@@ -6,7 +6,7 @@
 #    By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/13 19:22:42 by zminhas           #+#    #+#              #
-#    Updated: 2021/07/07 19:50:12 by zminhas          ###   ########.fr        #
+#    Updated: 2021/07/10 16:15:26 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ SRCS_BONUS	=	fractol_bonus.c\
 				srcs_bonus/beryl.c\
 				srcs_bonus/color.c\
 				srcs_bonus/init_var.c\
+				srcs_bonus/init_fract.c\
 				srcs_bonus/mandelbrot.c\
 				srcs_bonus/fract_name.c\
 				srcs_bonus/burningship.c\

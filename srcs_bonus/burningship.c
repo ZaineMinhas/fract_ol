@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 19:36:01 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/08 15:47:54 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/10 16:22:02 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,14 @@ static int	color(int i, t_fract *var)
 
 void	burningship(t_fract *var)
 {
-	long double  c_r;
-    long double  c_i;
-    long double  z_r;
-    long double  z_i;
-    long double  tmp;
-	int		x;
-	int		y;
-	int		i;
+	long double	c_r;
+	long double	c_i;
+	long double	z_r;
+	long double	z_i;
+	long double	tmp;
+	int			x;
+	int			y;
+	int			i;
 
 	x = -1;
 	while (++x < var->param->screen_x)
@@ -61,9 +61,9 @@ void	burningship(t_fract *var)
 			{
 				tmp = z_r * z_r - z_i * z_i;
 				z_i = fabsl(2 * z_r * z_i + c_i);
-                z_r = fabsl(tmp + c_r);
+				z_r = fabsl(tmp + c_r);
 			}
-			if  (i != DRAW_PREC)
+			if (i != DRAW_PREC)
 				draw_pixel(var->img, x, y, color(i, var));
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:14:42 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/07 18:05:38 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/10 16:32:12 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ typedef struct s_paramlist
 	int			id;
 }				t_param;
 
-typedef	struct	s_fractlist
+typedef struct s_fractlist
 {
 	t_img	*img;
 	t_param	*param;
@@ -74,7 +74,7 @@ typedef	struct	s_fractlist
 ** FRACTAL FUNCTION
 */
 
-void    mandelbrot(t_fract *var);
+void	mandelbrot(t_fract *var);
 void	julia(t_fract *var);
 void	check_name(char *str, t_fract *var);
 int		display_fract(t_fract *var);

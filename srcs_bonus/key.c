@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 18:49:06 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/08 16:06:33 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/10 16:11:00 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	other_key(int key, t_fract *var)
 		var->param->color = 6;
 }
 
-int		ft_key(int key, t_fract *var)
+int	ft_key(int key, t_fract *var)
 {
 	if (key == KEY_ESC)
 		exit(1);
@@ -51,15 +51,13 @@ int		ft_key(int key, t_fract *var)
 	return (0);
 }
 
-int		ft_mouse_wheel(int button, int x, int y, t_fract *var)
+int	ft_mouse_wheel(int button, int x, int y, t_fract *var)
 {
 	x = 9;
 	y = 6;
 	if (button == 4)
-		zoom_in(var);
-		//var->param->moves[0] = 1;
+		var->param->moves[0] = 1;
 	else if (button == 5)
-		zoom_out(var);
-		//var->param->moves[0] = -1;
+		var->param->moves[0] = -1;
 	return (0);
 }

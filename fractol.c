@@ -6,13 +6,13 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:49:59 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/07 15:08:35 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/10 16:32:27 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int		display_fract(t_fract *var)
+int	display_fract(t_fract *var)
 {
 	if (var->param->id == 1)
 		mandelbrot(var);
@@ -21,7 +21,7 @@ int		display_fract(t_fract *var)
 	return (0);
 }
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_fract		var;
 

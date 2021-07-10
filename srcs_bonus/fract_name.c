@@ -6,13 +6,13 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 14:08:08 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/08 16:25:37 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/10 16:16:56 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol_bonus.h"
 
-int		check_mandelbrot(char *str)
+int	check_mandelbrot(char *str)
 {
 	if (ft_strlen(str) != 10)
 		return (0);
@@ -39,7 +39,7 @@ int		check_mandelbrot(char *str)
 	return (1);
 }
 
-int		check_julia(char *str)
+int	check_julia(char *str)
 {
 	if (ft_strlen(str) != 5)
 		return (0);
@@ -56,7 +56,7 @@ int		check_julia(char *str)
 	return (2);
 }
 
-int		check_beryl(char *str)
+int	check_beryl(char *str)
 {
 	if (ft_strlen(str) != 5)
 		return (0);
@@ -73,7 +73,7 @@ int		check_beryl(char *str)
 	return (3);
 }
 
-int		check_burningship(char *str)
+int	check_burningship(char *str)
 {
 	if (ft_strlen(str) != 11)
 		return (0);
