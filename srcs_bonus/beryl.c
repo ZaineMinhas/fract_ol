@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 19:00:50 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/10 16:23:13 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/10 17:05:17 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,37 +37,34 @@ static int	color(int i, t_fract *var)
 
 void	beryl(t_fract *var)
 {
-	long double	c_r;
-	long double	c_i;
-	long double	z_r;
-	long double	z_i;
+	long double	c[2];
+	long double	z[2];
 	long double	tmp[2];
-	int			x;
-	int			y;
+	int			coord[2];
 	int			i;
 
-	x = -1;
-	while (++x < var->param->screen_x)
+	coord[0] = -1;
+	while (++coord[0] < var->param->screen_x)
 	{
-		y = -1;
-		while (++y < var->param->screen_y)
+		coord[1] = -1;
+		while (++coord[1] < var->param->screen_y)
 		{
-			c_r = x / var->param->zoom_x + var->param->x1;
-			c_i = y / var->param->zoom_y + var->param->y1;
-			z_r = 1;
-			z_i = 0;
+			c[0] = coord[0] / var->param->zoom_x + var->param->x1;
+			c[1] = coord[1] / var->param->zoom_y + var->param->y1;
+			z[0] = 1;
+			z[1] = 0;
 			i = -1;
-			while (z_r * z_r + z_i * z_i <= 4 && ++i < DRAW_PREC)
+			while (z[0] * z[0] + z[1] * z[1] <= 4 && ++i < DRAW_PREC)
 			{
-				tmp[0] = c_r * z_r - c_i * z_i;
-				tmp[1] = c_r * z_i + c_i * z_r;
-				c_r += z_r;
-				c_i += z_i;
-				z_r = tmp[0];
-				z_i = tmp[1];
+				tmp[0] = c[0] * z[0] - c[1] * z[1];
+				tmp[1] = c[0] * z[1] + c[1] * z[0];
+				c[0] += z[0];
+				c[1] += z[1];
+				z[0] = tmp[0];
+				z[1] = tmp[1];
 			}
 			if (i != DRAW_PREC)
-				draw_pixel(var->img, x, y, color(i, var));
+				draw_pixel(var->img, coord[0], coord[1], color(i, var));
 		}
 	}
 	mlx_put_image_to_window(var->mlx_ptr, var->win_ptr, var->img->img, 0, 0);

@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:14:42 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/10 16:32:12 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/10 17:28:40 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,18 @@ typedef struct s_imglist
 	int		line_length;
 	int		endian;
 }				t_img;
+
+typedef struct s_calclist
+{
+	double	c_r;
+	double	c_i;
+	double	z_r;
+	double	z_i;
+	double	tmp;
+	int		x;
+	int		y;
+	int		i;
+}				t_calc;
 
 typedef struct s_paramlist
 {
