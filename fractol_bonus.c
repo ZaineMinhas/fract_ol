@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:49:59 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/10 17:50:54 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/12 16:39:11 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,29 @@ static	int	check_moves(t_fract *var)
 
 int	display_fract(t_fract *var)
 {
+	int	x;
+	int	y;
+
 	if (check_moves(var))
 	{
-		if (var->param->id == 1)
-			mandelbrot(var);
-		else if (var->param->id == 2)
-			julia(var);
-		else if (var->param->id == 3)
-			beryl(var);
-		else if (var->param->id == 4)
-			burningship(var);
+		x = -1;
+		while (++x < var->param->screen_x)
+		{
+			y = -1;
+			while (++y < var->param->screen_y)
+			{
+				if (var->param->id == 1)
+					mandelbrot(var, x, y);
+				else if (var->param->id == 2)
+					julia(var, x, y);
+				else if (var->param->id == 3)
+					beryl(var, x, y);
+				else if (var->param->id == 4)
+					burningship(var, x, y);
+			}
+		}
+		mlx_put_image_to_window(var->mlx_ptr, var->win_ptr, \
+		var->img->img, 0, 0);
 	}
 	return (0);
 }

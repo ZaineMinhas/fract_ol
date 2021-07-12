@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 18:49:06 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/10 17:39:01 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/12 16:37:58 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,8 @@ int	ft_mouse_wheel(int button, int x, int y, t_fract *var)
 	x = 9;
 	y = 6;
 	if (button == 4)
-		zoom_in(var);
-		//var->param->moves[0] = 1;
+		var->param->moves[0] = 1;
 	else if (button == 5)
-		zoom_out(var);
-		//var->param->moves[0] = -1;
+		var->param->moves[0] = -1;
 	return (0);
 }

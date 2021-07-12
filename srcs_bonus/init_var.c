@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:57:28 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/10 16:16:00 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/12 17:44:21 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 void	init_struct(t_fract *var)
 {
 	var->img = malloc(sizeof(t_img));
-	if (!var->img)
-		return_error(1);
 	var->param = malloc(sizeof(t_param));
-	if (!var->param)
+	if (!var->img || !var->param)
 		return_error(1);
 }
 
@@ -33,6 +31,30 @@ void	init_mlx(t_fract *var)
 	var->param->screen_y);
 	var->img->addr = mlx_get_data_addr(var->img->img, &var->img->bits_per_pixel,
 			&var->img->line_length, &var->img->endian);
+}
+
+void	init_screen_size(t_fract *var)
+{
+	if (var->param->id == 1)
+	{
+		var->param->screen_x = 440 * SCREEN;
+		var->param->screen_y = 360 * SCREEN;
+	}
+	else if (var->param->id == 2)
+	{
+		var->param->screen_x = 520 * SCREEN;
+		var->param->screen_y = 580 * SCREEN;
+	}
+	else if (var->param->id == 3)
+	{
+		var->param->screen_x = 440 * SCREEN;
+		var->param->screen_y = 360 * SCREEN;
+	}
+	else if (var->param->id == 4)
+	{
+		var->param->screen_x = 440 * SCREEN;
+		var->param->screen_y = 430 * SCREEN;
+	}
 }
 
 void	init_const(t_fract *var)

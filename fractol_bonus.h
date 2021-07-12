@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:14:42 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/10 17:51:09 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/12 16:44:07 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,10 +90,10 @@ typedef struct s_fractlist
 ** FRACTAL FUNCTION
 */
 
-void	mandelbrot(t_fract *var);
-void	julia(t_fract *var);
-void	beryl(t_fract *var);
-void	burningship(t_fract *var);
+void	mandelbrot(t_fract *var, int x, int y);
+void	julia(t_fract *var, int x, int y);
+void	beryl(t_fract *var, int x, int y);
+void	burningship(t_fract *var, int x, int y);
 void	check_name(char *str, t_fract *var);
 int		display_fract(t_fract *var);
 int		check_mandelbrot(char *str);
@@ -120,6 +120,7 @@ void	move_right(t_fract *var);
 */
 
 void	init_struct(t_fract *var);
+void	init_screen_size(t_fract *var);
 void	init_const(t_fract *var);
 void	init_mandelbrot(t_fract *var);
 void	init_julia(t_fract *var);
@@ -139,6 +140,7 @@ void	ft_reset(t_fract *var);
 */
 
 void	select_color(t_fract *var, char *str);
+int		color(int i, t_fract *var);
 int		color_ice(int i);
 int		color_fire(int i);
 int		color_rave(int i);

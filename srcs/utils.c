@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 16:40:05 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/10 16:24:01 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/12 17:42:55 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ void	return_error(int index)
 {
 	if (!index)
 	{
-		printf("ARGUMENT NUMBER ERROR\n");
+		printf("\033[91mARGUMENT NUMBER ERROR\033[0m\n");
 		return_error(3);
 	}
 	else if (index == 1)
-		printf("MALLOC ERROR\n");
+		printf("\033[91mMALLOC ERROR\033[0m\n");
 	else if (index == 2)
 		printf("SOMETHING WRONG\n");
 	else if (index == 3)

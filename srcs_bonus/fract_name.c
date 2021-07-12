@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 14:08:08 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/10 16:16:56 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/12 16:43:41 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,26 +111,8 @@ void	check_name(char *str, t_fract *var)
 		var->param->id = check_beryl(str);
 	if (!var->param->id)
 		var->param->id = check_burningship(str);
-	if (var->param->id == 1)
-	{
-		var->param->screen_x = 440 * SCREEN;
-		var->param->screen_y = 360 * SCREEN;
-	}
-	else if (var->param->id == 2)
-	{
-		var->param->screen_x = 520 * SCREEN;
-		var->param->screen_y = 580 * SCREEN;
-	}
-	else if (var->param->id == 3)
-	{
-		var->param->screen_x = 440 * SCREEN;
-		var->param->screen_y = 360 * SCREEN;
-	}
-	else if (var->param->id == 4)
-	{
-		var->param->screen_x = 440 * SCREEN;
-		var->param->screen_y = 430 * SCREEN;
-	}
+	if (var->param->id)
+		init_screen_size(var);
 	else
 		return_error(3);
 }

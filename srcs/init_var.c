@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:57:28 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/10 16:26:38 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/12 17:44:52 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 void	init_struct(t_fract *var)
 {
 	var->img = malloc(sizeof(t_img));
-	if (!var->img)
-		return_error(1);
 	var->param = malloc(sizeof(t_param));
-	if (!var->param)
+	if (!var->img || !var->param)
 		return_error(1);
 }
 
