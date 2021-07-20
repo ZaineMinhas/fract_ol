@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:14:42 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/12 16:44:07 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/20 17:51:51 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,14 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
-# include <sys/types.h>
-# include <sys/uio.h>
-# include <stdlib.h>
-# include <limits.h>
+# include <pthread.h>
 # include "libft/libft.h"
 
 /*
 ** DEFINE
 */
 
+# define THREADS 64
 # define SCREEN 1
 # define COLOR 0
 # define DRAW_PREC 200
@@ -52,6 +50,8 @@
 ** STRUCT
 */
 
+typedef struct s_fractlist	t_fract;
+
 typedef struct s_imglist
 {
 	void	*img;
@@ -73,18 +73,31 @@ typedef struct s_paramlist
 	float		screen_y;
 	float		add_x;
 	float		add_y;
-	int			moves[5];
+	int			zoom;
 	int			id;
 	int			color;
 }				t_param;
 
-typedef struct s_fractlist
+typedef struct s_thread
 {
-	t_img	*img;
-	t_param	*param;
+	t_fract	*var;
+	int		id;
+}				t_thread;
+
+typedef struct s_render
+{
+	pthread_t	threads[THREADS];
+	t_thread	args[THREADS];
+}				t_render;
+
+struct s_fractlist
+{
+	t_img		*img;
+	t_param		*param;
+	t_render	render;
 	void	*mlx_ptr;
 	void	*win_ptr;
-}				t_fract;
+};
 
 /*
 ** FRACTAL FUNCTION
@@ -95,7 +108,7 @@ void	julia(t_fract *var, int x, int y);
 void	beryl(t_fract *var, int x, int y);
 void	burningship(t_fract *var, int x, int y);
 void	check_name(char *str, t_fract *var);
-int		display_fract(t_fract *var);
+int		display_fract(t_fract *var, int x, int y);
 int		check_mandelbrot(char *str);
 int		check_julia(char *str);
 int		check_beryl(char *str);
@@ -134,6 +147,13 @@ void	init_burningship(t_fract *var);
 void	draw_pixel(t_img *img, int x, int y, int color);
 void	init_mlx(t_fract *var);
 void	ft_reset(t_fract *var);
+
+/*
+** THREADS FUNCTION
+*/
+
+void	*use_threads(void *v);
+int		init_threads(t_fract *var);
 
 /*
 ** COLOR FUNCTION

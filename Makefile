@@ -6,7 +6,7 @@
 #    By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/13 19:22:42 by zminhas           #+#    #+#              #
-#    Updated: 2021/07/10 16:15:26 by zminhas          ###   ########.fr        #
+#    Updated: 2021/07/20 17:04:57 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ SRCS_BONUS	=	fractol_bonus.c\
 				srcs_bonus/julia.c\
 				srcs_bonus/beryl.c\
 				srcs_bonus/color.c\
+				srcs_bonus/thread.c\
 				srcs_bonus/init_var.c\
 				srcs_bonus/init_fract.c\
 				srcs_bonus/mandelbrot.c\
@@ -70,7 +71,7 @@ bonus:			$(OBJS_BONUS)
 					@make -C $(LIB_PATH)
 					@cp -r $(LIB_PATH)/libft.a ./fractol.a
 					@ar -rcs $(NAME) $(OBJS_BONUS)
-					@gcc -lmlx -framework OpenGL -framework AppKit $(NAME)
+					@gcc -lmlx -framework OpenGL -framework AppKit -lpthread $(NAME)
 					@mv a.out fractol
 					@echo "${BLUE}fractol_bonus.a created !${RESET}"
 
