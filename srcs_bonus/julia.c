@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 15:30:34 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/12 16:29:24 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/25 18:38:34 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	julia(t_fract *var, int x, int y)
 	long double	tmp;
 	int			i;
 
-	c[0] = 0.285;
-	c[1] = 0.01;
+	c[0] = (float)(4 * var->param->mouse_x) / var->param->screen_x - 2;
+	c[1] = (float)(4 * var->param->mouse_y) / var->param->screen_y - 2;
 	z[0] = x / var->param->zoom_x + var->param->x1;
 	z[1] = y / var->param->zoom_y + var->param->y1;
 	i = -1;

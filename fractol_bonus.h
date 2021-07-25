@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:14:42 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/20 17:51:51 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/25 18:40:23 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 # define THREADS 64
 # define SCREEN 1
 # define COLOR 0
+# define MOUSE_SPEED 10
 # define DRAW_PREC 200
 # define KEY_ESC 53
 # define KEY_W 13
@@ -73,6 +74,8 @@ typedef struct s_paramlist
 	float		screen_y;
 	float		add_x;
 	float		add_y;
+	int			mouse_x;
+	int			mouse_y;
 	int			zoom;
 	int			id;
 	int			color;
@@ -119,6 +122,7 @@ int		check_burningship(char *str);
 */
 
 int		ft_key(int key, t_fract *var);
+int		ft_mouse_pos(int x, int y, t_fract *var);
 int		ft_mouse_wheel(int button, int x, int y, t_fract *var);
 void	other_key(int key, t_fract *var);
 void	zoom_in(t_fract *var);

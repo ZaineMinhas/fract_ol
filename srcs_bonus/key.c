@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 18:49:06 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/20 17:48:48 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/25 18:35:51 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,29 @@ int	ft_key(int key, t_fract *var)
 	return (0);
 }
 
+int	ft_mouse_pos(int x, int y, t_fract *var)
+{
+	var->param->mouse_x = x;
+	var->param->mouse_y = y;
+	return (0);
+}
+
 int	ft_mouse_wheel(int button, int x, int y, t_fract *var)
 {
-	x = 9;
-	y = 6;
+	if (button == 1 || button == 2)
+		return (0);
+	if (x - var->param->screen_x / 2 < 0)
+		var->param->x1 -= (1 / var->param->zoom_x) * MOUSE_SPEED *\
+		(1 - (float)x / (var->param->screen_x / 2));
+	else
+		var->param->x1 += (1 / var->param->zoom_x) * MOUSE_SPEED *\
+		((float)(x - var->param->screen_x / 2) / (var->param->screen_x / 2));
+	if (y - var->param->screen_y / 2 < 0)
+		var->param->y1 -= (1 / var->param->zoom_y) * MOUSE_SPEED *\
+		(1 - (float)y / (var->param->screen_y / 2));
+	else
+		var->param->y1 += (1 / var->param->zoom_y) * MOUSE_SPEED *\
+		((float)(y - var->param->screen_y / 2) / (var->param->screen_y / 2));
 	if (button == 4)
 		var->param->zoom = 1;
 	else if (button == 5)

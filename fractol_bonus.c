@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:49:59 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/20 17:48:25 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/25 18:34:01 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int	main(int argc, char **argv)
 	mlx_hook(var.win_ptr, 2, 1L << 0, ft_key, &var);
 	mlx_hook(var.win_ptr, 4, 1L << 2, ft_mouse_wheel, &var);
 	mlx_hook(var.win_ptr, 17, 1L << 17, ft_close, &var);
+	mlx_hook(var.win_ptr, 6, 1L << 6, ft_mouse_pos, &var);
 	mlx_loop_hook(var.mlx_ptr, init_threads, &var);
 	mlx_loop(var.mlx_ptr);
 	return (0);
