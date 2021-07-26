@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 19:36:01 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/12 16:35:49 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/26 17:21:02 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,6 @@ void	burningship(t_fract *var, int x, int y)
 	}
 	if (i != DRAW_PREC)
 		draw_pixel(var->img, x, y, color(i, var));
+	else
+		draw_pixel(var->img, x, y, 0);
 }

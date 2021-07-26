@@ -6,34 +6,22 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:49:59 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/25 18:34:01 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/26 15:35:07 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol_bonus.h"
 
-static	int	check_moves(t_fract *var)
-{
-	if (var->param->zoom == 1)
-		zoom_in(var);
-	if (var->param->zoom == -1)
-		zoom_out(var);
-	return (1);
-}
-
 int	display_fract(t_fract *var, int x, int y)
 {
-	if (check_moves(var))
-	{
-		if (var->param->id == 1)
-			mandelbrot(var, x, y);
-		else if (var->param->id == 2)
-			julia(var, x, y);
-		else if (var->param->id == 3)
-			beryl(var, x, y);
-		else if (var->param->id == 4)
-			burningship(var, x, y);
-	}
+	if (var->param->id == 1)
+		mandelbrot(var, x, y);
+	else if (var->param->id == 2)
+		julia(var, x, y);
+	else if (var->param->id == 3)
+		beryl(var, x, y);
+	else if (var->param->id == 4)
+		burningship(var, x, y);
 	return (0);
 }
 

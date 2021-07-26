@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:57:28 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/12 17:44:21 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/26 17:29:26 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ void	init_screen_size(t_fract *var)
 		var->param->screen_x = 440 * SCREEN;
 		var->param->screen_y = 430 * SCREEN;
 	}
+	if (THREADS > var->param->screen_x)
+		return_error(2);
 }
 
 void	init_const(t_fract *var)

@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 17:19:03 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/10 16:29:04 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/26 16:07:37 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	color_fire(int i)
 {
-	int	color[24];
+	int	color[22];
 
 	color[0] = 0x001E0500;
 	color[1] = 0x00270502;
@@ -38,14 +38,12 @@ int	color_fire(int i)
 	color[19] = 0x00550514;
 	color[20] = 0x005A0A14;
 	color[21] = 0x00853214;
-	color[22] = 0x00B05A14;
-	color[23] = 0x00DC8214;
-	return (color[i % 24]);
+	return (color[i % 22]);
 }
 
 int	color_ice(int i)
 {
-	int	color[24];
+	int	color[22];
 
 	color[0] = 0x000A78CD;
 	color[1] = 0x000A6BC2;
@@ -69,9 +67,7 @@ int	color_ice(int i)
 	color[19] = 0x008797D5;
 	color[20] = 0x0093A6DF;
 	color[21] = 0x00A0B4EA;
-	color[22] = 0x00ACC3F4;
-	color[23] = 0x00B9D2FF;
-	return (color[i % 24]);
+	return (color[i % 22]);
 }
 
 int	color_clown(int i)

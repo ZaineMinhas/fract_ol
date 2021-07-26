@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 16:22:52 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/20 17:49:30 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/26 17:27:23 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,13 @@ void	*use_threads(void *v)
 	return (NULL);
 }
 
-int		init_threads(t_fract *var)
+int	init_threads(t_fract *var)
 {
 	t_render	*r;
 	int			i;
 
 	i = -1;
 	r = &var->render;
-	ft_reset(var);
 	while (++i < THREADS)
 	{
 		r->args[i].id = i;

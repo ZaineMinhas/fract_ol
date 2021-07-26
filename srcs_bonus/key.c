@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 18:49:06 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/25 18:35:51 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/26 17:36:30 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,17 @@ int	ft_key(int key, t_fract *var)
 {
 	if (key == KEY_ESC)
 		exit(1);
-	else if (key == KEY_UP)
-		var->param->zoom = 1;
-	else if (key == KEY_DOWN)
-		var->param->zoom = -1;
-	else if (key == KEY_W)
-		move_down(var);
-	else if (key == KEY_A)
-		move_right(var);
-	else if (key == KEY_S)
-		move_up(var);
 	else if (key == KEY_D)
+		zoom_in(var);
+	else if (key == KEY_A)
+		zoom_out(var);
+	else if (key == KEY_UP)
+		move_down(var);
+	else if (key == KEY_LEFT)
+		move_right(var);
+	else if (key == KEY_DOWN)
+		move_up(var);
+	else if (key == KEY_RIGHT)
 		move_left(var);
 	else
 		other_key(key, var);
@@ -63,20 +63,20 @@ int	ft_mouse_wheel(int button, int x, int y, t_fract *var)
 	if (button == 1 || button == 2)
 		return (0);
 	if (x - var->param->screen_x / 2 < 0)
-		var->param->x1 -= (1 / var->param->zoom_x) * MOUSE_SPEED *\
+		var->param->x1 -= (1 / var->param->zoom_x) * (MOUSE_SPEED * SCREEN) * \
 		(1 - (float)x / (var->param->screen_x / 2));
 	else
-		var->param->x1 += (1 / var->param->zoom_x) * MOUSE_SPEED *\
+		var->param->x1 += (1 / var->param->zoom_x) * (MOUSE_SPEED * SCREEN) * \
 		((float)(x - var->param->screen_x / 2) / (var->param->screen_x / 2));
 	if (y - var->param->screen_y / 2 < 0)
-		var->param->y1 -= (1 / var->param->zoom_y) * MOUSE_SPEED *\
+		var->param->y1 -= (1 / var->param->zoom_y) * (MOUSE_SPEED * SCREEN) * \
 		(1 - (float)y / (var->param->screen_y / 2));
 	else
-		var->param->y1 += (1 / var->param->zoom_y) * MOUSE_SPEED *\
+		var->param->y1 += (1 / var->param->zoom_y) * (MOUSE_SPEED * SCREEN) * \
 		((float)(y - var->param->screen_y / 2) / (var->param->screen_y / 2));
 	if (button == 4)
-		var->param->zoom = 1;
+		zoom_in(var);
 	else if (button == 5)
-		var->param->zoom = -1;
+		zoom_out(var);
 	return (0);
 }

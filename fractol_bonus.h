@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:14:42 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/25 18:40:23 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/26 17:55:55 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,13 @@
 ** DEFINE
 */
 
-# define THREADS 64
+# define THREADS 128
 # define SCREEN 1
 # define COLOR 0
-# define MOUSE_SPEED 10
+# define MOUSE_SPEED 20
 # define DRAW_PREC 200
 # define KEY_ESC 53
-# define KEY_W 13
 # define KEY_A 0
-# define KEY_S 1
 # define KEY_D 2
 # define KEY_1 18
 # define KEY_2 19
@@ -76,7 +74,6 @@ typedef struct s_paramlist
 	float		add_y;
 	int			mouse_x;
 	int			mouse_y;
-	int			zoom;
 	int			id;
 	int			color;
 }				t_param;
@@ -98,8 +95,8 @@ struct s_fractlist
 	t_img		*img;
 	t_param		*param;
 	t_render	render;
-	void	*mlx_ptr;
-	void	*win_ptr;
+	void		*mlx_ptr;
+	void		*win_ptr;
 };
 
 /*

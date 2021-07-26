@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 16:40:05 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/12 17:41:50 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/07/26 17:29:00 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	return_error(int index)
 	else if (index == 1)
 		printf("\033[91mMALLOC ERROR\033[0m\n");
 	else if (index == 2)
-		printf("SOMETHING WRONG\n");
+		printf("TOO MUCH THREADS\n");
 	else if (index == 3)
 	{
 		printf("Second argument have to be :\n-Mandelbrot\n-Julia\n-Beryl\n");
