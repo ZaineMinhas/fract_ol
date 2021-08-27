@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:49:59 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/10 16:32:27 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/08/27 19:49:37 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ int	main(int argc, char **argv)
 	check_name(argv[1], &var);
 	init_mlx(&var);
 	init_const(&var);
+	if (argc < 4)
+		julia_set(&var, argv[2]);
+	else
+		julia_set(&var, NULL);
 	mlx_hook(var.win_ptr, 2, 1L << 0, ft_key, &var);
 	mlx_hook(var.win_ptr, 4, 1L << 2, ft_mouse_wheel, &var);
 	mlx_hook(var.win_ptr, 17, 1L << 17, ft_close, &var);

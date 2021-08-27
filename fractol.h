@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:14:42 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/10 17:28:40 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/08/27 20:15:41 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,14 @@ typedef struct s_imglist
 
 typedef struct s_calclist
 {
-	double	c_r;
-	double	c_i;
-	double	z_r;
-	double	z_i;
-	double	tmp;
-	int		x;
-	int		y;
-	int		i;
+	long double	c_r;
+	long double	c_i;
+	double		z_r;
+	double		z_i;
+	double		tmp;
+	int			x;
+	int			y;
+	int			i;
 }				t_calc;
 
 typedef struct s_paramlist
@@ -70,7 +70,7 @@ typedef struct s_paramlist
 	float		screen_y;
 	float		add_x;
 	float		add_y;
-	int			moves;
+	int			julia_set;
 	int			id;
 }				t_param;
 
@@ -134,6 +134,7 @@ int		color_psycho(int i);
 */
 
 void	return_error(int index);
+void	julia_set(t_fract *var, char *str);
 int		ft_close(t_fract *var);
 
 #endif

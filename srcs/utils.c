@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 16:40:05 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/12 17:42:55 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/08/27 19:54:24 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,17 @@ int	ft_close(t_fract *var)
 	(void)var;
 	exit(1);
 	return (0);
+}
+
+void	julia_set(t_fract *var, char *str)
+{
+	int	i;
+
+	if (!str)
+		return ;
+	i = ft_atoi(str);
+	if (i >= 1 && i <= 4)
+		var->param->julia_set = i;
+	else
+		var->param->julia_set = 0;
 }

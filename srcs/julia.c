@@ -6,11 +6,40 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 15:30:34 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/10 17:27:50 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/08/27 20:12:25 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
+
+static void	select_julia_set(t_calc *c, t_fract *var)
+{
+	if (!var->param->julia_set)
+	{
+		c->c_r = 0.285;
+		c->c_i = 0.01;
+	}
+	else if (var->param->julia_set == 1)
+	{
+		c->c_r = -0.969231;
+		c->c_i = -0.013793;
+	}
+	else if (var->param->julia_set == 2)
+	{
+		c->c_r = -0.738462;
+		c->c_i = -0.317241;
+	}
+	else if (var->param->julia_set == 3)
+	{
+		c->c_r = -1.115385;
+		c->c_i = 0.331034;
+	}
+	else if (var->param->julia_set == 4)
+	{
+		c->c_r = -0.138462;
+		c->c_i = 0.648276;
+	}
+}
 
 static int	color(int i)
 {
@@ -52,8 +81,7 @@ void	julia(t_fract *var)
 		c.y = -1;
 		while (++c.y < var->param->screen_y)
 		{
-			c.c_r = 0.285;
-			c.c_i = 0.01;
+			select_julia_set(&c, var);
 			c.z_r = c.x / var->param->zoom_x + var->param->x1;
 			c.z_i = c.y / var->param->zoom_y + var->param->y1;
 			c.i = -1;

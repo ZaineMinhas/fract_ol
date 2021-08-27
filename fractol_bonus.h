@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 19:14:42 by zminhas           #+#    #+#             */
-/*   Updated: 2021/07/26 17:55:55 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/08/27 19:24:59 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 ** DEFINE
 */
 
-# define THREADS 128
+# define THREADS 420
 # define SCREEN 1
 # define COLOR 0
 # define MOUSE_SPEED 20
